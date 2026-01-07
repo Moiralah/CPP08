@@ -6,7 +6,7 @@
 /*   By: huidris <huidris@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 17:49:21 by huidris           #+#    #+#             */
-/*   Updated: 2026/01/07 18:29:54 by huidris          ###   ########.fr       */
+/*   Updated: 2026/01/04 23:38:32 by huidris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,7 @@ class Span
 		~Span();
 
 		void addNumber(int Num);
-
-		template <typename iterator>
-		void Span::addNumbers(iterator begin, iterator end)
-		{
-			if ((_num.size() + std::distance(begin, end)) > _N)
-				throw std::runtime_error ("Not enough space to put all num.");
-			_num.insert(_num.end(), begin, end);
-		}
+		void addNumbers(std::vector<int>::iterator begin, std::vector<int>::iterator end);
 		unsigned int shortestSpan();
 		unsigned int longestSpan();
 };

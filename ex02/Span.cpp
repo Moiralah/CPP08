@@ -6,7 +6,7 @@
 /*   By: huidris <huidris@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 17:49:21 by huidris           #+#    #+#             */
-/*   Updated: 2026/01/07 18:34:34 by huidris          ###   ########.fr       */
+/*   Updated: 2026/01/05 01:04:27 by huidris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,13 @@ void Span::addNumber(int Num)
 	_num.push_back(Num);
 }
 
+void Span::addNumbers(std::vector<int>::iterator begin, std::vector<int>::iterator end)
+{
+	if ((_num.size() + std::distance(begin, end)) > _N)
+		throw std::runtime_error ("Not enough space to put all num.");
+	_num.insert(_num.end(), begin, end);
+}
+
 unsigned int Span::shortestSpan()
 {
 	if (_num.size() < 2)
@@ -46,7 +53,7 @@ unsigned int Span::shortestSpan()
 	std::sort(tmp.begin(), tmp.end());
 
 	int minSpan = tmp[1] - tmp[0];
-	for(unsigned int i = 0; i < _num.size(); i++)
+	for(unsigned int i = 0; i < _N - 1; i++)
 	{
 		int diff = tmp[i + 1] - tmp[i];
 		if (diff < minSpan)
@@ -63,5 +70,5 @@ unsigned int Span::longestSpan()
 	std::vector<int> tmp = _num;
 	std::sort(tmp.begin(), tmp.end());
 
-	return tmp[tmp.size() - 1] - tmp[0];
+	return tmp[_N - 1] - tmp[0];
 }
