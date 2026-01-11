@@ -6,7 +6,7 @@
 /*   By: huidris <huidris@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 17:49:21 by huidris           #+#    #+#             */
-/*   Updated: 2026/01/07 18:34:34 by huidris          ###   ########.fr       */
+/*   Updated: 2026/01/11 19:09:24 by huidris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ unsigned int Span::shortestSpan()
 	std::sort(tmp.begin(), tmp.end());
 
 	int minSpan = tmp[1] - tmp[0];
-	for(unsigned int i = 0; i < _num.size(); i++)
+	for(unsigned int i = 0; i < _num.size() - 1; i++)
 	{
 		int diff = tmp[i + 1] - tmp[i];
 		if (diff < minSpan)
@@ -57,7 +57,7 @@ unsigned int Span::shortestSpan()
 
 unsigned int Span::longestSpan()
 {
-	if (_num.size() < 2)
+	if (_num.size() - 1 < 2)
 		throw std::runtime_error ("No span exist");
 
 	std::vector<int> tmp = _num;
