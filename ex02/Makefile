@@ -6,17 +6,17 @@
 #    By: huidris <huidris@student.42kl.edu.my>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/17 17:37:16 by huidris           #+#    #+#              #
-#    Updated: 2026/01/04 23:41:20 by huidris          ###   ########.fr        #
+#    Updated: 2026/01/11 23:26:46 by huidris          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= span
+NAME	= mutant
 
 FLAGS	= -Wall -Wextra -Werror -std=c++98
 
 CC		= c++
 
-SRC		= main.cpp Span.cpp
+SRC		= main.cpp
 
 $(NAME): $(SRC)
 		$(CC) $(FLAGS) $(SRC) -o $(NAME)
