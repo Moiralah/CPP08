@@ -6,7 +6,7 @@
 /*   By: huidris <huidris@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 17:49:21 by huidris           #+#    #+#             */
-/*   Updated: 2026/01/11 23:25:03 by huidris          ###   ########.fr       */
+/*   Updated: 2026/01/22 14:24:16 by huidris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 #include <algorithm>
 #include <iostream>
-#include <exception>
-#include <vector>
 #include <stack>
 #include <deque>
 
